@@ -104,6 +104,24 @@ function renderPrivacy() {
   const summary = document.querySelector("[data-privacy-summary]");
   if (summary && app?.privacy?.summary) summary.textContent = app.privacy.summary;
 
+  const updatedAt = document.querySelector("[data-privacy-updated]");
+  if (updatedAt && app?.privacy?.updatedAt) updatedAt.textContent = app.privacy.updatedAt;
+
+  const content = document.querySelector("[data-privacy-content]");
+  if (content && app?.privacy?.sections?.length) {
+    const sections = app.privacy.sections.map((section, index) => {
+      const paragraphs = (section.paragraphs || [])
+        .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+        .join("");
+      const action = section.action
+        ? `<p class="policy-action"><a href="${escapeHtml(section.action.href)}">${escapeHtml(section.action.label)} →</a></p>`
+        : "";
+      return `<section><span>${String(index + 1).padStart(2, "0")}</span><div><h2>${escapeHtml(section.title)}</h2>${paragraphs}${action}</div></section>`;
+    }).join("");
+    content.querySelectorAll(":scope > section").forEach((section) => section.remove());
+    content.insertAdjacentHTML("beforeend", sections);
+  }
+
   const switcher = document.querySelector("[data-privacy-apps]");
   if (switcher && apps.length) {
     switcher.innerHTML = `<a class="${app ? "" : "is-active"}" href="./">通用政策</a>${apps.map((item) =>

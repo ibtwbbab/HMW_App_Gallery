@@ -29,6 +29,24 @@ python3 -m http.server 8080
 /privacy/?app=应用ID
 ```
 
+站点保留一份通用政策。如果应用需要独立政策，可在对应目录对象的 `privacy` 中配置：
+
+```js
+privacy: {
+  updatedAt: "2026 年 9 月 5 日",
+  summary: "应用级隐私摘要。",
+  sections: [
+    {
+      title: "章节标题",
+      paragraphs: ["章节正文。"],
+      action: { label: "可选链接", href: "../support/" },
+    },
+  ],
+}
+```
+
+未配置 `sections` 时，应用隐私页会沿用通用政策正文；配置后只替换该应用的政策章节，不影响其他应用。
+
 在 `siteConfig.supportEmail` 中填入支持邮箱后，技术支持页会自动启用邮件链接。
 
 ## GitHub Pages
