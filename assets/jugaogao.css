@@ -1,0 +1,48 @@
+.alarm-page { --paper:#f2f5fc; --ink:#192442; --muted:#59667f; --line:#d9e0ee; --orange:#2455db; --white:#fff; background:var(--paper); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+.alarm-page p { line-height:1.8; }
+.alarm-page .kicker { color:#2455db; }
+.alarm-page .button-primary { background:#2455db; color:#fff; border-radius:16px; }
+.alarm-page .button-primary:hover { background:#183fad; }
+.alarm-page a:focus-visible,.alarm-page summary:focus-visible { outline:3px solid #2455db; outline-offset:5px; border-radius:4px; }
+.alarm-page .site-header { gap:20px; }
+.alarm-page .site-nav a { min-height:44px; display:flex; align-items:center; }
+.alarm-page .site-nav a.is-active::after { bottom:0; }
+.alarm-page .skip-link { position:absolute; top:-100px; left:20px; z-index:20; padding:12px; background:white; color:#192442; }
+.alarm-page .skip-link:focus { top:10px; }
+.alarm-hero { display:grid; grid-template-columns:1.1fr 1fr; align-items:center; gap:64px; padding-block:76px 60px; }
+.alarm-identity { display:flex; align-items:center; gap:15px; }
+.alarm-identity img { border-radius:17px; }
+.alarm-identity .kicker { margin:0 0 6px; font-size:10px; }
+.alarm-identity strong { font-size:19px; }
+.alarm-copy h1 { font-size:clamp(40px,4.5vw,64px); line-height:1.24; letter-spacing:-.055em; margin:32px 0 24px; }
+.alarm-copy h1 span { color:#2455db; }
+.alarm-description { font-size:17px; color:var(--muted); max-width:490px; }
+.alarm-page .hero-actions { flex-wrap:wrap; gap:22px; margin-top:28px; }
+.alarm-meta { font-size:13px; margin:22px 0 6px; color:var(--muted); }
+.alarm-note { font-size:12px; color:var(--muted); margin:0; }
+.alarm-art { margin:0; padding:28px; border:1px solid #dbe2fa; border-radius:36px; background:linear-gradient(145deg,#e4ebff,#eee9fd 65%,#fbeee9); }
+.alarm-art-top { display:flex; justify-content:space-between; align-items:center; gap:14px; font-size:12px; color:#50608a; margin-bottom:25px; }
+.alarm-art-top > span:last-child { font-size:28px; color:#a94a30; }
+.alarm-preview { max-width:330px; margin:auto; background:#f7f8fc; padding:25px 20px; border:6px solid white; border-radius:32px; box-shadow:0 24px 40px #29396616; }
+.alarm-preview-heading { display:flex; justify-content:space-between; font-size:25px; font-weight:750; }.alarm-preview-heading span { color:#2455db; }
+.alarm-group-label { font-size:12px; font-weight:600; margin:24px 0 8px; }
+.alarm-time-card { display:flex; align-items:center; justify-content:space-between; gap:12px; border-radius:18px; padding:15px; background:#eeeafa; color:#bc493e; }
+.alarm-time-card strong { font-size:43px; letter-spacing:-.04em; font-weight:500; }.alarm-time-card p { margin:2px 0 0; font-size:11px; }
+.alarm-toggle { width:36px; height:22px; padding:3px; border-radius:20px; background:#c55347; flex-shrink:0; }.alarm-toggle::after { content:""; display:block; margin-left:auto; width:16px; height:16px; border-radius:50%; background:white; }
+.alarm-time-card.standard { background:white; color:#2455db; }.standard .alarm-toggle { background:#2455db; }
+.alarm-progress { display:flex; align-items:center; gap:16px; margin-top:25px; }.alarm-progress p { font-size:10px; color:var(--muted); margin:4px 0 0; }.alarm-progress > div > strong { font-size:14px; }
+.alarm-ring { width:70px; height:70px; flex-shrink:0; border-radius:50%; background:conic-gradient(#2455db 60%,#e0e6f4 0); display:grid; place-items:center; }.alarm-ring > strong { background:#f7f8fc; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; gap:3px; font-size:24px; }.alarm-ring small { font-size:12px; color:var(--muted); }
+.alarm-art figcaption { font-size:10px; text-align:center; color:#59667f; margin-top:25px; line-height:1.7; }
+.alarm-values { display:flex; justify-content:center; gap:65px; padding:25px 0; border-block:1px solid var(--line); font-size:13px; color:var(--muted); }.alarm-values span::before { content:"✓"; margin-right:10px; color:#2455db; }
+.alarm-section { padding-block:78px; }.alarm-page h2 { font-size:clamp(27px,3vw,38px); line-height:1.4; letter-spacing:-.035em; margin:0 0 25px; }
+.alarm-features { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:35px; }.alarm-features article { background:white; border:1px solid #e1e6f0; border-radius:22px; padding:26px 23px; }.alarm-index { color:#2455db; font-size:12px; }.alarm-features h3 { font-size:18px; margin:30px 0 12px; }.alarm-features p { color:var(--muted); font-size:14px; margin:0; }
+.alarm-start { display:grid; grid-template-columns:1fr 1.3fr; gap:60px; padding:48px; background:#e8edfc; border-radius:28px; }.alarm-start > div > p:last-child { color:var(--muted); font-size:14px; }.alarm-start ol { padding:0; list-style:none; margin:0; counter-reset:steps; }.alarm-start li { position:relative; padding:0 0 23px 48px; counter-increment:steps; }.alarm-start li:last-child { padding-bottom:0; }.alarm-start li::before { content:counter(steps); position:absolute; left:0; width:30px; height:30px; display:grid; place-items:center; background:white; border-radius:10px; color:#2455db; }.alarm-start h3 { margin:0 0 8px; font-size:17px; }.alarm-start li p { margin:0; font-size:14px; color:var(--muted); }
+.alarm-boundary { padding-block:65px; max-width:850px; text-align:center; }.alarm-boundary h2 { font-size:27px; }.alarm-boundary > p:last-child { color:var(--muted); font-size:14px; }
+.alarm-bottom { display:grid; grid-template-columns:1fr 1fr; gap:22px; }.alarm-bottom article { padding:30px; background:white; border-radius:22px; }.alarm-bottom h2 { font-size:23px; margin-bottom:12px; }.alarm-bottom article > p:not(.kicker) { color:var(--muted); font-size:14px; }.alarm-bottom a { display:inline-block; padding-block:10px; color:#2455db; }
+.alarm-version { text-align:center; font-size:11px; color:var(--muted); padding-block:30px; }
+.alarm-page .app-support-hero h1 { font-size:clamp(34px,5vw,60px); }.alarm-page .app-support-faq details { background:#fff; border:1px solid var(--line); border-radius:16px; padding:20px; margin-bottom:12px; }.alarm-page .app-support-faq summary { cursor:pointer; line-height:1.7; }.alarm-page .app-support-help { background:#e8edfc; border-radius:22px; padding:30px; margin-bottom:50px; }
+.alarm-page .policy-lead { background:#e7edff; color:var(--ink); }.alarm-page .policy-aside h1 { font-size:40px; }.alarm-page .policy-content > section { scroll-margin-top:25px; }.alarm-platform { display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }.alarm-platform a { padding:10px 14px; border:1px solid #b9c8e8; border-radius:12px; text-decoration:none; font-size:13px; }.alarm-platform a[aria-current] { background:#2455db; border-color:#2455db; color:white; }.alarm-toc { display:grid; gap:6px; margin-top:22px; }.alarm-toc a { padding:5px 0; font-size:13px; text-decoration:none; color:var(--muted); }.alarm-toc a:hover { text-decoration:underline; }.alarm-page .policy-aside { position:static; }.alarm-page .footer-links { flex-wrap:wrap; }
+@media(max-width:1000px) { .alarm-hero { gap:30px; }.alarm-art { padding:22px; }.alarm-features { grid-template-columns:repeat(2,1fr); }.alarm-start { gap:30px; padding:35px; } }
+@media(max-width:700px) { .alarm-page { --shell:min(1180px,calc(100vw - 36px)); }.alarm-page .site-header { height:auto; min-height:85px; flex-wrap:wrap; padding-block:16px; gap:12px; }.alarm-page .site-nav { gap:22px; font-size:12px; }.alarm-hero { grid-template-columns:1fr; padding-block:38px; gap:35px; }.alarm-copy h1 { font-size:clamp(35px,8vw,50px); }.alarm-description { font-size:15px; }.alarm-art { max-width:450px; width:100%; margin-inline:auto; }.alarm-values { gap:12px; justify-content:space-between; font-size:10px; }.alarm-values span::before { margin-right:4px; }.alarm-section { padding-block:45px; }.alarm-features { gap:12px; }.alarm-features article { padding:21px 16px; }.alarm-features h3 { font-size:17px; margin-top:20px; }.alarm-start { grid-template-columns:1fr; padding:28px 22px; gap:20px; }.alarm-bottom { grid-template-columns:1fr; }.alarm-boundary { padding-block:45px; }.alarm-page .policy-layout { padding-top:38px; }.alarm-toc { grid-template-columns:1fr 1fr; }.alarm-page .app-support-help { padding:24px; }.alarm-page .site-footer { gap:22px; } }
+@media(max-width:370px) { .alarm-features { grid-template-columns:1fr; }.alarm-art { padding:18px 12px; }.alarm-preview { padding:20px 12px; }.alarm-time-card strong { font-size:37px; }.alarm-page .site-nav { gap:18px; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }

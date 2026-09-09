@@ -1,6 +1,8 @@
 import { apps, getApp, siteConfig } from "./catalog.js";
 import { renderJourneyApp, enhanceJourneyPrivacy } from "./concentration-pages.js";
 import { renderAppSupport } from "./app-support.js";
+import { renderAlarmApp, enhanceAlarmSupport, enhanceAlarmPrivacy } from "./jugaogao-pages.js";
+import { alarmPolicies } from "./jugaogao-privacy.js";
 
 const escapeHtml = (value = "") =>
   String(value).replace(/[&<>'"]/g, (character) => ({
@@ -62,6 +64,7 @@ function renderApp() {
   }
 
   document.title = `${app.name} · ${siteConfig.brand}`;
+  if (app.id === "jugaogao-alarm") { renderAlarmApp(root, app); return; }
   if (app.id === "concentration-journey") {
     renderJourneyApp(root, app);
     return;
@@ -95,7 +98,12 @@ function renderApp() {
 }
 
 function renderPrivacy() {
-  const app = getApp(new URLSearchParams(location.search).get("app"));
+  const params = new URLSearchParams(location.search);
+  let app = getApp(params.get("app"));
+  if (app?.id === "jugaogao-alarm") {
+    const platform = params.get("platform") === "harmonyos" ? "harmonyos" : "ios";
+    app = { ...app, privacy: alarmPolicies[platform], policyPlatform: platform };
+  }
   if (!app?.privacy?.sections?.length) {
     console.info("[hmw gallery] Privacy route has no app policy");
     location.replace(new URL("../#apps", location.href).href);
@@ -130,12 +138,14 @@ function renderPrivacy() {
   const switcher = document.querySelector("[data-privacy-apps]");
   if (switcher) switcher.innerHTML = `<a href="../app/?id=${encodeURIComponent(app.id)}">← 返回${escapeHtml(app.name)}</a>`;
   if (app?.id === "concentration-journey") enhanceJourneyPrivacy(app);
+  if (app?.id === "jugaogao-alarm") enhanceAlarmPrivacy(app);
 }
 
 function renderDeveloper() {
   const app = getApp(new URLSearchParams(location.search).get("app"));
   if (app) {
     renderAppSupport(app);
+    if (app.id === "jugaogao-alarm") enhanceAlarmSupport(app);
     return;
   }
   console.info("[hmw gallery] Developer social page rendered");
