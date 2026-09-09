@@ -1,6 +1,6 @@
 /* 公共展示与开发者页面：系统字体、原生链接、零外部资源。 */
 .public-page { --paper: #f7f8f2; --ink: #243e30; --muted: #606e63; --line: #dae1d5; --orange: #547349; --white: #fffefa; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
-.public-page .site-header { height: 88px; }.public-page .brand { letter-spacing: -.03em; }.public-page .brand-mark { font-family: Georgia, serif; font-size: 24px; font-style: italic; }
+.public-page .site-header { height: 88px; }.public-page .brand { letter-spacing: -.03em; }
 .public-page .site-nav a { padding-block: 12px; }.public-page .site-nav a.is-active::after { bottom: 1px; }
 .public-page :focus-visible { outline: 3px solid #8d6929; outline-offset: 5px; }
 .skip-link, .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }.skip-link:focus { position: fixed; z-index: 50; top: 12px; left: 12px; width: auto; height: auto; padding: 14px; background: white; clip-path: none; }

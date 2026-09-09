@@ -19,7 +19,7 @@ img { display: block; max-width: 100%; }
 
 .site-header { width: var(--shell); height: 88px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
 .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 600; text-decoration: none; letter-spacing: -.02em; }
-.brand-mark { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 50%; color: var(--white); background: var(--ink); font-size: 14px; font-weight: 600; }
+.brand-mark { display: grid; flex-shrink: 0; width: 36px; height: 36px; place-items: center; border-radius: 50%; color: #fffefa; background: #243e30; font-family: Georgia, serif; font-size: 24px; font-style: italic; font-weight: 600; }
 .brand-mark-small { width: 30px; height: 30px; }
 .site-nav { display: flex; gap: 34px; font-size: 14px; }
 .site-nav a { position: relative; color: var(--muted); text-decoration: none; }

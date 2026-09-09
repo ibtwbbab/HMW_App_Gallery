@@ -30,7 +30,7 @@ function preparePage(active, description) {
   console.info("[hmw gallery] Concentration journey page rendered", { page: active });
 }
 
-const storeButton = app => `<a class="button journey-store" href="${escapeHtml(app.appStoreUrl)}" rel="noopener noreferrer"><span aria-hidden="true">↗</span><span><small>前往下载</small>App Store</span><span aria-hidden="true">→</span></a>`;
+const storeButton = app => `<a class="button journey-store" href="${escapeHtml(app.appStoreUrl)}" rel="noopener noreferrer"><span><small>前往下载</small>App Store</span><span class="journey-store-arrow" aria-hidden="true">↗</span></a>`;
 const faqMarkup = items => items.map(item => `<details><summary>${escapeHtml(item.title)}</summary><p>${escapeHtml(item.description)}</p></details>`).join("");
 
 export function renderJourneyApp(root, app) {
@@ -71,6 +71,4 @@ export function enhanceJourneyPrivacy(app) {
   nav.className = "journey-policy-toc"; nav.setAttribute("aria-label", "隐私政策目录");
   nav.innerHTML = app.privacy.sections.map((item, index) => `<a href="#policy-${index + 1}"><span>${String(index + 1).padStart(2, "0")}</span>${escapeHtml(item.title)}</a>`).join("");
   aside.append(nav);
-  document.querySelector(".policy-lead").insertAdjacentHTML("afterend", '<p class="journey-policy-notice">发布前待完善 · 运营联系信息与生效日期仍为占位内容，详见第 1、9 节。</p>');
-  document.querySelectorAll(".policy-content p").forEach(p => { if (p.textContent.includes("【待补充")) p.classList.add("journey-placeholder"); });
 }
