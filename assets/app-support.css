@@ -1,0 +1,16 @@
+.app-support-hero { padding: 70px 0 55px; border-bottom: 1px solid var(--line); }
+.app-support-hero h1 { margin: 0 0 20px; font-size: clamp(36px, 5vw, 64px); line-height: 1.35; }
+.app-support-hero p:not(.kicker), .app-support-faq p, .app-support-help p:not(.kicker) { color: var(--muted); font-size: 14px; }
+.app-support-faq { display: grid; grid-template-columns: .8fr 1.3fr; gap: 80px; padding-block: 65px; }
+.app-support-faq h2, .app-support-help h2 { margin: 0; font-size: 30px; }
+.app-support-faq details { border-bottom: 1px solid var(--line); }
+.app-support-faq details:first-child { border-top: 1px solid var(--line); }
+.app-support-faq summary { position: relative; list-style: none; cursor: pointer; padding: 23px 28px 23px 0; font-size: 15px; line-height: 1.8; }
+.app-support-faq summary::-webkit-details-marker { display: none; }
+.app-support-faq summary::after { content: "+"; position: absolute; right: 0; font-size: 21px; }
+.app-support-faq details[open] summary::after { content: "−"; }
+.app-support-faq details p { margin: 0 0 24px; }
+.app-support-help { display: flex; align-items: center; justify-content: space-between; gap: 35px; background: #eaf0e2; border-radius: 24px; padding: 42px; margin-bottom: 70px; }
+.app-support-help p { max-width: 610px; }.app-support-help .button { flex-shrink: 0; border-radius: 12px; }
+@media(max-width:850px) { .app-support-faq { grid-template-columns: 1fr; gap: 24px; padding-block: 45px; }.app-support-help { align-items: flex-start; flex-direction: column; gap: 18px; } }
+@media(max-width:580px) { .app-support-hero { padding-block: 45px; }.app-support-help { padding: 26px; margin-bottom: 45px; }.app-support-faq h2, .app-support-help h2 { font-size: 27px; } }

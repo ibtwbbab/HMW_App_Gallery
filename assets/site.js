@@ -1,4 +1,6 @@
 import { apps, getApp, siteConfig } from "./catalog.js";
+import { renderJourneyApp, enhanceJourneyPrivacy } from "./concentration-pages.js";
+import { renderAppSupport } from "./app-support.js";
 
 const escapeHtml = (value = "") =>
   String(value).replace(/[&<>'"]/g, (character) => ({
@@ -36,18 +38,11 @@ function renderHome() {
   }
 
   grid.innerHTML = apps.map((app, index) => `
-    <article class="app-card" style="--accent:${escapeHtml(app.accent || "#ff7358")}">
-      <div class="app-card-top">
-        ${iconMarkup(app)}
-        <span class="app-number">${String(index + 1).padStart(2, "0")}</span>
-      </div>
-      <div class="app-card-body">
-        <p class="app-platform">${escapeHtml(app.platform || "Apple platforms")}</p>
-        <h3>${escapeHtml(app.name)}</h3>
-        <p>${escapeHtml(app.description)}</p>
-      </div>
-      <a class="card-link" href="./app/?id=${encodeURIComponent(app.id)}" aria-label="了解 ${escapeHtml(app.name)}">了解更多 <span>↗</span></a>
+    <article class="gallery-app" style="--accent:${escapeHtml(app.accent || "#365745")}">
+      <div class="gallery-app-art">${iconMarkup(app, "app-icon gallery-icon")}<span class="gallery-art-caption">${escapeHtml(app.tagline)}</span><span class="gallery-index">${String(index + 1).padStart(2, "0")}</span></div>
+      <div class="gallery-app-copy"><p class="kicker">${escapeHtml(app.platform)}</p><h3>${escapeHtml(app.name)}</h3><p>${escapeHtml(app.description)}</p><div class="gallery-app-links"><a class="button button-primary" href="./app/?id=${encodeURIComponent(app.id)}">了解 App <span aria-hidden="true">→</span></a>${app.privacy?.sections?.length ? `<a class="text-link" href="./privacy/?app=${encodeURIComponent(app.id)}">${escapeHtml(app.name)}隐私政策</a>` : ""}</div></div>
     </article>`).join("");
+
 }
 
 function renderApp() {
@@ -67,6 +62,10 @@ function renderApp() {
   }
 
   document.title = `${app.name} · ${siteConfig.brand}`;
+  if (app.id === "concentration-journey") {
+    renderJourneyApp(root, app);
+    return;
+  }
   const features = (app.features || []).map((feature, index) => `
     <article class="feature-card">
       <span>${String(index + 1).padStart(2, "0")}</span>
@@ -91,12 +90,18 @@ function renderApp() {
     </section>
     <section class="feature-section shell">
       <div class="section-heading"><div><p class="kicker">Highlights</p><h2>简单，但不简陋</h2></div><p>围绕真正重要的体验精心设计。</p></div>
-      <div class="feature-grid">${features || "<p>功能介绍即将补充。</p>"}</div>
+      <div class="feature-grid">${features || "<p>功能介绍即将补充。</p>"}</div><div class="app-help"><h2>需要更多帮助？</h2><a class="text-link" href="../support/">找到开发者 →</a></div>
     </section>`;
 }
 
 function renderPrivacy() {
   const app = getApp(new URLSearchParams(location.search).get("app"));
+  if (!app?.privacy?.sections?.length) {
+    console.info("[hmw gallery] Privacy route has no app policy");
+    location.replace(new URL("../#apps", location.href).href);
+    return;
+  }
+  document.querySelector(".site-nav").insertAdjacentHTML("afterbegin", `<a href="../app/?id=${encodeURIComponent(app.id)}">${escapeHtml(app.name)}</a>`);
   const nameTargets = document.querySelectorAll("[data-privacy-name]");
   nameTargets.forEach((target) => { target.textContent = app?.name || "HMW Apps"; });
   if (app) document.title = `${app.name} 隐私政策 · ${siteConfig.brand}`;
@@ -123,26 +128,24 @@ function renderPrivacy() {
   }
 
   const switcher = document.querySelector("[data-privacy-apps]");
-  if (switcher && apps.length) {
-    switcher.innerHTML = `<a class="${app ? "" : "is-active"}" href="./">通用政策</a>${apps.map((item) =>
-      `<a class="${app?.id === item.id ? "is-active" : ""}" href="?app=${encodeURIComponent(item.id)}">${escapeHtml(item.name)}</a>`
-    ).join("")}`;
-  }
+  if (switcher) switcher.innerHTML = `<a href="../app/?id=${encodeURIComponent(app.id)}">← 返回${escapeHtml(app.name)}</a>`;
+  if (app?.id === "concentration-journey") enhanceJourneyPrivacy(app);
 }
 
-function renderSupport() {
-  const emailLink = document.querySelector("[data-support-email]");
-  if (!emailLink) return;
-  if (siteConfig.supportEmail) {
-    emailLink.href = `mailto:${siteConfig.supportEmail}`;
-    emailLink.textContent = siteConfig.supportEmail;
-  } else {
-    emailLink.removeAttribute("href");
-    emailLink.classList.add("is-disabled");
-    emailLink.textContent = "联系邮箱将在应用上线时公布";
+function renderDeveloper() {
+  const app = getApp(new URLSearchParams(location.search).get("app"));
+  if (app) {
+    renderAppSupport(app);
+    return;
   }
+  console.info("[hmw gallery] Developer social page rendered");
+  document.querySelectorAll(".social-card").forEach(link => {
+    link.addEventListener("click", () => {
+      console.info("[hmw gallery] Opening developer channel", { channel: link.querySelector("strong").textContent });
+    });
+  });
 }
 
 document.querySelectorAll("[data-current-year]").forEach((node) => { node.textContent = new Date().getFullYear(); });
 
-({ home: renderHome, app: renderApp, privacy: renderPrivacy, support: renderSupport })[document.body.dataset.page]?.();
+({ home: renderHome, app: renderApp, privacy: renderPrivacy, developer: renderDeveloper })[document.body.dataset.page]?.();
