@@ -38,7 +38,7 @@ export function renderJourneyApp(root, app) {
   root.innerHTML = `
     <section class="journey-hero shell">
       <div class="journey-copy">
-        <div class="journey-identity"><img src="${new URL(app.icon, import.meta.url).href}" alt="专注之旅 App 图标" width="64" height="64"><div><p class="kicker">CONCENTRATION JOURNEY</p><span>专注之旅 · 为注意力留白</span></div></div>
+        <div class="journey-identity"><img src="${new URL(app.icon, import.meta.url).href}" alt="专注之旅 App 图标" width="64" height="64"><div><p class="kicker">CONCENTRATION JOURNEY</p><span>专注之旅 · ${escapeHtml(app.version)} · 为注意力留白</span></div></div>
         <h1>少一点分心。<br>多一点<span>自己。</span></h1>
         <p class="journey-manifesto">解放被 App 绑架的注意力</p>
         <p class="journey-description">${escapeHtml(app.description)}</p>
@@ -55,11 +55,11 @@ export function renderJourneyApp(root, app) {
       </figure>
     </section>
     <div class="journey-values shell"><span><i aria-hidden="true">◌</i> 系统级屏幕使用时间能力</span><span><i aria-hidden="true">⌁</i> 设置与规则保存在本机</span><span><i aria-hidden="true">✧</i> 无广告 · 无第三方跟踪</span></div>
-    <section id="features" class="journey-section shell"><div class="journey-heading"><div><p class="kicker">A LITTLE SPACE FOR YOURSELF</p><h2>不是更努力克制，<br>是少一些打扰。</h2></div><p>从一次专注，到每天的习惯。<br>用适合自己的方式，与手机相处。</p></div><div class="journey-feature-grid">${app.features.map((item, index) => `<article class="journey-feature"><span class="feature-symbol" aria-hidden="true">${["◷", "❋", "▤", "↻", "▦", "⌘"][index]}</span><span class="feature-index">0${index + 1}</span><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></article>`).join("")}</div></section>
-    <section class="journey-start shell"><div><p class="kicker">YOUR FIRST JOURNEY</p><h2>从一段属于你的<br>时间开始。</h2><p>读几页书、写一段文字，或只是安静地做完一件事。</p></div><ol><li><span>01</span><div><h3>完成授权与密码设置</h3><p>选择个人或家庭模式，按系统提示授权，并牢记六位管理员密码。</p></div></li><li><span>02</span><div><h3>选出让你分心的应用</h3><p>把它们加入专注分组，选择这次旅程的时长。</p></div></li><li><span>03</span><div><h3>右滑开始，把手机放一旁</h3><p>App 内不可提前结束；旅程到期后回到 App，解除本次专注隐藏。</p></div></li></ol></section>
+    <section id="features" class="journey-section shell"><div class="journey-heading"><div><p class="kicker">A LITTLE SPACE FOR YOURSELF</p><h2>不是更努力克制，<br>是少一些打扰。</h2></div><p>从一次专注，到每天的习惯。<br>用适合自己的方式，与手机相处。</p></div><div class="journey-feature-grid">${app.features.map((item, index) => `<article class="journey-feature"><span class="feature-symbol" aria-hidden="true">${["◷", "❋", "▤", "↻", "▦", "⌘", "♩", "◉", "↔"][index]}</span><span class="feature-index">0${index + 1}</span><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.description)}</p></article>`).join("")}</div></section>
+    <section class="journey-start shell"><div><p class="kicker">YOUR FIRST JOURNEY</p><h2>从一段属于你的<br>时间开始。</h2><p>读几页书、写一段文字，或只是安静地做完一件事。</p></div><ol><li><span>01</span><div><h3>完成授权与密码设置</h3><p>选择个人或家庭模式，按系统提示授权，并牢记六位管理员密码。</p></div></li><li><span>02</span><div><h3>选出让你分心的应用</h3><p>把它们加入专注分组，设置单段时长、趟数、间隔与提醒。小屏幕可在“更多选项”中调整。</p></div></li><li><span>03</span><div><h3>右滑开始，把手机放一旁</h3><p>App 内不可提前结束；每段结束后回到 App 校准休息或完成状态，下一段按计划开始。</p></div></li></ol></section>
     <section class="journey-privacy-card shell"><div class="privacy-emblem" aria-hidden="true">◎</div><div><p class="kicker">PRIVATE BY DESIGN</p><h2>你的习惯，不必成为数据画像。</h2><p>不读取被选应用的内容，不上传应用选择和使用规则。必要的数据在设备上处理，管理员密码校验凭据由系统安全存储保护。</p><a class="text-link" href="../privacy/?app=concentration-journey">了解我们如何处理信息 →</a></div></section>
     <section class="journey-section journey-faq shell"><div><p class="kicker">GOOD TO KNOW</p><h2>开始之前，<br>你可能想知道。</h2><p>能力有边界，说明要清楚。</p></div><div>${faqMarkup(app.faq)}<div class="app-help"><h3>需要更多帮助？</h3><a class="text-link" href="../support/">找到开发者 →</a></div></div></section>
-    <section class="journey-final shell"><p class="kicker">MAKE ROOM FOR WHAT MATTERS</p><h2>下一段好时光，<br>从专注开始。</h2>${storeButton(app)}<p>内容依据 App ${escapeHtml(app.version)} 当前实现 · 2026.09.09 更新</p></section>`;
+    <section class="journey-final shell"><p class="kicker">MAKE ROOM FOR WHAT MATTERS</p><h2>下一段好时光，<br>从专注开始。</h2>${storeButton(app)}<p>内容依据 App ${escapeHtml(app.version)} 当前实现 · 2026.09.14 更新</p></section>`;
 }
 
 export function enhanceJourneyPrivacy(app) {
