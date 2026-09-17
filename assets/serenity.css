@@ -1,0 +1,142 @@
+/* 摇泥马专属：复用客户端森林、玄铁、苔绿与羊皮纸；无外部字体。 */
+.serenity-page {
+  --paper: #f5edcf; --ink: #293329; --muted: #5e634c; --line: #cfc59e;
+  --orange: #6a743b; --green: #354a32; --white: #fff8df;
+  background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+.serenity-page h1, .serenity-page h2, .serenity-page h3 { font-weight: 650; letter-spacing: -.035em; }
+.serenity-page p { line-height: 1.85; }
+.serenity-page .site-header { height: 88px; border-bottom: 2px solid var(--line); }
+.serenity-page .site-nav a { padding-block: 12px; }
+.serenity-page .site-nav a.is-active::after { bottom: 0; height: 3px; background: #657143; }
+.serenity-page .kicker { display: block; color: #667044; font-size: 10px; line-height: 1.8; letter-spacing: .17em; }
+.serenity-page :focus-visible { outline: 3px solid #8e5920; outline-offset: 5px; }
+.serenity-page .button { border: 2px solid #293c29; border-radius: 2px; min-height: 52px; box-shadow: 4px 4px 0 #a9aa7d; }
+.serenity-page .button-primary { color: #fff8df; background: #3d5636; }
+.serenity-page .button-primary:hover { background: #293e2b; }
+.serenity-page .text-link { text-underline-offset: 6px; line-height: 1.85; }
+.serenity-hero { padding: 64px 0 54px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
+.serenity-hero-copy { min-width: 0; }
+.serenity-identity { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; }
+.serenity-identity img { width: 60px; height: 60px; border-radius: 14px; }
+.serenity-identity .kicker { margin: 0 0 5px; font-size: 9px; }
+.serenity-identity p { margin: 0; font-size: 17px; font-weight: 650; }
+.serenity-identity p span { font-size: 11px; font-weight: 400; color: var(--muted); }
+.serenity-chapter { margin: 0 0 18px; font-size: 12px; letter-spacing: .12em; color: #6f633e; }
+.serenity-hero h1 { font-size: clamp(38px, 4.4vw, 62px); line-height: 1.28; margin: 0 0 26px; }
+.serenity-hero h1 span { color: #687443; }
+.serenity-description { max-width: 460px; color: var(--muted); font-size: 15px; margin: 0; }
+.serenity-hero .hero-actions { gap: 26px; flex-wrap: wrap; margin-top: 28px; }
+.serenity-release { color: var(--muted); font-size: 11px; margin: 25px 0 0; }
+.serenity-art { margin: 0; min-width: 0; padding: 9px; border: 2px solid #566043; background: #d9d1a5; box-shadow: 8px 8px 0 #d9d0ab; }
+.serenity-scene { position: relative; isolation: isolate; overflow: hidden; height: 530px; background: #42543a url("./serenity-forest.png") center 46% / cover no-repeat; }
+.serenity-scene::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(#16261b80, transparent 40%, #25302024); }
+.serenity-scene-label { padding-top: 33px; text-align: center; color: #fff1bd; font-weight: 700; font-size: 29px; text-shadow: 2px 2px 0 #293329; }
+.serenity-scene-label span { display: block; font-size: 10px; font-weight: 500; margin-top: 6px; letter-spacing: .18em; }
+.serenity-cage { position: relative; z-index: 2; width: 70%; height: 135px; margin: 35px auto 0; border: 7px ridge #9ca585; background: #263328b8; box-shadow: 4px 5px 0 #23312380; }
+.serenity-cage-sign { position: absolute; top: -21px; left: 50%; transform: translateX(-50%); white-space: nowrap; padding: 5px 20px; color: #f4e7b8; background: #3a4535; border: 3px double #a3a17b; font-size: 13px; font-weight: 650; }
+.serenity-cage-symbols { height: 100%; display: flex; gap: 11px; justify-content: center; align-items: center; padding-top: 12px; }
+.serenity-cage-symbols i { display: grid; place-items: center; width: 38px; height: 40px; font-style: normal; font-size: 24px; color: #f4e7b8; background: #677451; border: 2px solid #b5b68b; }
+.serenity-beast { position: absolute; width: 265px; height: 265px; object-fit: contain; top: 243px; left: 50%; transform: translateX(-50%); image-rendering: pixelated; }
+.serenity-scene-caption { position: absolute; bottom: 17px; left: 20px; right: 20px; margin: 0; padding: 8px 6px; border: 2px solid #666a43; background: #f4e7b8ed; text-align: center; font-size: 11px; }
+.serenity-art figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; padding: 12px 3px 3px; font-size: 10px; color: #555a3f; }
+.serenity-values { display: flex; justify-content: space-around; gap: 16px; padding: 22px 10px; border-block: 2px solid var(--line); font-size: 12px; }
+.serenity-values i { font-size: 8px; font-style: normal; margin-right: 10px; color: #7d874c; }
+.serenity-section { padding: 85px 0; }
+.serenity-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 34px; }
+.serenity-page .serenity-heading h2, .serenity-start h2 { font-size: clamp(28px, 3vw, 40px); line-height: 1.4; margin: 0; }
+.serenity-heading > p, .serenity-start > div > p:not(.kicker) { color: var(--muted); font-size: 13px; }
+.serenity-features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.serenity-features article { padding: 26px; background: #fbf4db; border: 1px solid #c8c09c; box-shadow: 3px 3px 0 #ddd4ae; }
+.serenity-index { font: 12px ui-monospace, monospace; color: #6d7844; }
+.serenity-features h3 { margin: 28px 0 12px; font-size: 20px; }
+.serenity-features p { margin: 0; color: var(--muted); font-size: 13px; }
+.serenity-start { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; padding: 46px; background: #dfe1bf; border: 2px solid #a6ad7e; box-shadow: 5px 5px 0 #d6cea6; scroll-margin-top: 24px; }
+.serenity-start ol { list-style: none; padding: 0; margin: 0; }
+.serenity-start li { display: flex; gap: 20px; padding: 22px 0; border-bottom: 1px solid #bbc199; }
+.serenity-start li:first-child { padding-top: 0; }
+.serenity-start li:last-child { border-bottom: 0; padding-bottom: 0; }
+.serenity-start li > span { display: grid; flex-shrink: 0; place-items: center; width: 34px; height: 36px; font-size: 15px; color: #fff4cd; background: #53633e; }
+.serenity-start h3 { font-size: 16px; margin: 0 0 8px; }
+.serenity-start li p { color: var(--muted); font-size: 13px; margin: 0; }
+.serenity-boundary { display: flex; gap: 22px; padding: 35px 0; margin-top: 35px; border-bottom: 1px solid var(--line); }
+.serenity-boundary > span { font-size: 30px; color: #857044; }
+.serenity-boundary h2 { font-size: 17px; margin: 0 0 10px; }
+.serenity-boundary p { color: var(--muted); font-size: 13px; max-width: 940px; margin: 0; }
+.serenity-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; padding: 64px 0 42px; }
+.serenity-bottom article + article { padding-left: 40px; border-left: 1px solid var(--line); }
+.serenity-bottom h2 { font-size: 26px; margin: 0 0 12px; }
+.serenity-bottom p:not(.kicker) { color: var(--muted); font-size: 13px; }
+.serenity-version { margin-bottom: 32px; color: var(--muted); font-size: 10px; }
+.serenity-page .site-footer { min-height: 140px; grid-template-columns: 1fr auto; gap: 22px; }
+.serenity-page .site-footer > p { grid-column: 1 / -1; text-align: left; }
+.serenity-page .footer-links { flex-wrap: wrap; gap: 20px; }
+/* 技术支持保持原生 details，长文使用高对比纸面。 */
+.serenity-page .app-support-hero { padding: 64px 0 46px; }
+.serenity-page .app-support-hero h1 { font-size: clamp(31px, 4.6vw, 56px); }
+.serenity-page .app-support-faq { grid-template-columns: .65fr 1.4fr; gap: 70px; }
+.serenity-page .app-support-faq details { background: #fbf4db; margin-bottom: 12px; border: 1px solid var(--line); padding: 0 22px; }
+.serenity-page .app-support-faq summary { font-weight: 600; }
+.serenity-page .app-support-faq details[open] { border-left: 4px solid #667443; padding-left: 19px; }
+.serenity-page .app-support-help { background: #dfe1bf; border: 2px solid #a6ad7e; border-radius: 0; }
+.serenity-page .app-support-help .button { border-radius: 2px; }
+/* 隐私正文与目录：不将森林图铺在正文下，确保长文可读。 */
+.serenity-page .policy-layout { padding-top: 65px; grid-template-columns: 265px minmax(0, 1fr); gap: 64px; }
+.serenity-page .policy-aside { top: 24px; }
+.serenity-page .policy-aside h1 { font-size: 46px; line-height: 1.3; }
+.serenity-page .policy-switcher { margin-top: 23px; }
+.serenity-toc { display: grid; gap: 3px; margin-top: 23px; }
+.serenity-toc a { display: flex; gap: 12px; padding: 8px 0; font-size: 12px; text-decoration: none; line-height: 1.6; }
+.serenity-toc a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.serenity-toc span { color: #6a7449; font: 11px/1.8 ui-monospace, monospace; }
+.serenity-page .policy-lead { border: 2px solid #65704c; border-radius: 0; background: #354a32; box-shadow: 5px 5px 0 #d8d0a8; }
+.serenity-page .policy-lead span { color: #ead699; }
+.serenity-page .policy-lead p { font-size: 16px; }
+.serenity-page .policy-content > section { grid-template-columns: 36px minmax(0, 1fr); scroll-margin-top: 24px; }
+.serenity-page .policy-content h2 { font-size: 21px; line-height: 1.5; }
+.serenity-page .policy-content section p { font-size: 14px; line-height: 1.95; overflow-wrap: anywhere; }
+@media (max-width: 1050px) {
+  .serenity-hero { gap: 35px; }.serenity-hero h1 { font-size: 44px; }
+  .serenity-page .policy-layout { gap: 40px; grid-template-columns: 235px minmax(0, 1fr); }
+}
+@media (max-width: 850px) {
+  .serenity-hero { grid-template-columns: 1fr; gap: 38px; padding-top: 42px; }
+  .serenity-identity { margin-bottom: 32px; }.serenity-description { max-width: 600px; }
+  .serenity-art { width: min(100%, 500px); justify-self: center; }
+  .serenity-hero h1 { font-size: clamp(36px, 6.4vw, 50px); }
+  .serenity-heading { flex-direction: column; align-items: start; gap: 8px; }
+  .serenity-features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .serenity-start { grid-template-columns: 1fr; gap: 25px; padding: 30px; }
+  .serenity-section { padding-block: 58px; }
+  .serenity-page .app-support-faq, .serenity-page .policy-layout { grid-template-columns: 1fr; gap: 28px; }
+  .serenity-page .policy-aside { position: static; }
+  .serenity-toc { grid-template-columns: 1fr 1fr; gap: 4px 15px; }
+  .serenity-page .site-footer { grid-template-columns: 1fr; }
+  .serenity-page .footer-links { flex-direction: row; align-items: start; }
+}
+@media (max-width: 580px) {
+  .serenity-page .site-header { height: auto; min-height: 78px; flex-wrap: wrap; gap: 8px; padding-block: 16px; }
+  .serenity-page .brand > span:last-child { display: none; }
+  .serenity-page .site-nav { gap: 15px; }.serenity-page .site-nav a { font-size: 12px; }
+  .serenity-identity { gap: 12px; }.serenity-identity p span { display: block; }
+  .serenity-hero .hero-actions { flex-direction: row; align-items: center; gap: 22px; }
+  .serenity-hero .button { padding-inline: 15px; font-size: 13px; }
+  .serenity-scene { height: 460px; }.serenity-scene-label { padding-top: 25px; }
+  .serenity-cage { width: 78%; margin-top: 28px; height: 115px; }
+  .serenity-cage-symbols { gap: 8px; }.serenity-cage-symbols i { width: 32px; height: 35px; font-size: 21px; }
+  .serenity-beast { width: 230px; height: 230px; top: 208px; }
+  .serenity-scene-caption { left: 10px; right: 10px; bottom: 14px; }
+  .serenity-values { gap: 8px; padding-inline: 0; font-size: 10px; }.serenity-values i { margin-right: 4px; }
+  .serenity-features { grid-template-columns: 1fr; gap: 15px; }.serenity-features article { padding: 23px; }
+  .serenity-features h3 { margin-top: 17px; }.serenity-start { padding: 23px; }.serenity-start li { gap: 13px; }
+  .serenity-boundary { gap: 13px; }.serenity-boundary h2 { font-size: 16px; }
+  .serenity-bottom { grid-template-columns: 1fr; gap: 30px; padding-top: 42px; }
+  .serenity-bottom article + article { padding: 28px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+  .serenity-page .app-support-hero { padding-block: 40px; }
+  .serenity-page .app-support-faq details { padding-inline: 16px; }
+  .serenity-page .app-support-faq details[open] { padding-left: 13px; }
+  .serenity-page .policy-layout { padding-top: 40px; }
+  .serenity-page .policy-aside h1 { font-size: 38px; }.serenity-page .policy-lead { padding: 23px; }
+  .serenity-page .policy-content > section { grid-template-columns: 26px minmax(0, 1fr); }
+}

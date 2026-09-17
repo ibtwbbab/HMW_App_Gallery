@@ -3,6 +3,9 @@ import { renderJourneyApp, enhanceJourneyPrivacy } from "./concentration-pages.j
 import { renderAppSupport } from "./app-support.js";
 import { renderAlarmApp, enhanceAlarmSupport, enhanceAlarmPrivacy } from "./jugaogao-pages.js";
 import { alarmPolicies } from "./jugaogao-privacy.js";
+import { renderSerenityApp } from "./serenity-app.js";
+import { enhanceSerenitySupport } from "./serenity-support.js";
+import { enhanceSerenityPrivacy } from "./serenity-policy-page.js";
 
 const escapeHtml = (value = "") =>
   String(value).replace(/[&<>'"]/g, (character) => ({
@@ -64,6 +67,7 @@ function renderApp() {
   }
 
   document.title = `${app.name} · ${siteConfig.brand}`;
+  if (app.id === "yaonima") { renderSerenityApp(root, app); return; }
   if (app.id === "jugaogao-alarm") { renderAlarmApp(root, app); return; }
   if (app.id === "concentration-journey") {
     renderJourneyApp(root, app);
@@ -139,6 +143,7 @@ function renderPrivacy() {
   if (switcher) switcher.innerHTML = `<a href="../app/?id=${encodeURIComponent(app.id)}">← 返回${escapeHtml(app.name)}</a>`;
   if (app?.id === "concentration-journey") enhanceJourneyPrivacy(app);
   if (app?.id === "jugaogao-alarm") enhanceAlarmPrivacy(app);
+  if (app?.id === "yaonima") enhanceSerenityPrivacy(app);
 }
 
 function renderDeveloper() {
@@ -146,6 +151,7 @@ function renderDeveloper() {
   if (app) {
     renderAppSupport(app);
     if (app.id === "jugaogao-alarm") enhanceAlarmSupport(app);
+    if (app.id === "yaonima") enhanceSerenitySupport(app);
     return;
   }
   console.info("[hmw gallery] Developer social page rendered");
