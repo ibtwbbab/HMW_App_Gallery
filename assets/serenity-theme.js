@@ -1,4 +1,4 @@
-// 仅负责摇泥马页面的公共外观与导航，保持其它应用不变。
+// 仅负责YNM页面的公共外观与导航，保持其它应用不变。
 export const escapeHtml = (value = "") => String(value).replace(/[&<>"']/g, c => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
 })[c]);
@@ -26,7 +26,7 @@ export function prepareSerenityPage(active, description) {
   document.head.append(icon);
   document.querySelector(".site-nav").innerHTML = links.map(([key, label, href]) => `<a href="${href}" ${active === key ? 'class="is-active" aria-current="page"' : ""}>${label}</a>`).join("");
   document.querySelector(".footer-links").innerHTML = '<a href="../#apps">全部 App</a>' + links.map(([, label, href]) => `<a href="${href}">${label}</a>`).join("");
-  document.querySelector(".site-footer > div:first-child p").textContent = "摇泥马 · 封印纷扰，重归宁静";
+  document.querySelector(".site-footer > div:first-child p").textContent = "YNM · 封印纷扰，重归宁静";
   document.querySelector(".site-footer > p").innerHTML = `© ${new Date().getFullYear()} hmw`;
   document.querySelector("main").id = "main-content";
   if (!document.querySelector(".skip-link")) document.body.insertAdjacentHTML("afterbegin", '<a class="skip-link" href="#main-content">跳到主要内容</a>');

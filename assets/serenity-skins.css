@@ -1,4 +1,4 @@
-/* 三主题展示模块与默认黑白场景；样式作用域仅限摇泥马。 */
+/* 三主题展示模块与默认黑白场景；样式作用域仅限 YNM。 */
 .serenity-skins { padding-top: 64px; }
 .serenity-skins-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
 .serenity-skin-card { border: 2px solid #62634d; background: #fffdf3; box-shadow: 4px 4px 0 #d9d1b1; min-width: 0; }
