@@ -2,9 +2,9 @@
 import { escapeHtml } from "./serenity-theme.js";
 
 const skins = [
-  { key: "doodle", name: "潦草涂鸦", badge: "默认主题", image: "./serenity-doodle.png", description: "横线纸、随手画的笼子与潦草妖兽。封印完成后，枝条长出新叶。" },
+  { key: "doodle", name: "潦草涂鸦", badge: "随性手绘", image: "./serenity-doodle.png", description: "横线纸、随手画的笼子与潦草妖兽。封印完成后，枝条长出新叶。" },
   { key: "pixel", name: "像素森林", badge: "复古像素", image: "./serenity-beast.png?v=20260922", description: "森林遗址、像素笼体与马头泥身妖兽。封印完成后，破败森林恢复生机。" },
-  { key: "monochrome", name: "黑白手绘", badge: "简洁留白", image: "./serenity-monochrome.png", description: "白底黑线、圆润按钮与炭黑妖兽。封印完成后，金光与小黑云淡入背景。" },
+  { key: "monochrome", name: "黑白手绘", badge: "默认主题", image: "./serenity-monochrome.png", description: "白底黑线、圆润按钮与炭黑妖兽。封印完成后，金光与小黑云淡入背景。" },
 ];
 
 export function renderSerenitySkins() {

@@ -14,10 +14,10 @@ export function renderSerenityApp(root, app) {
         <p class="serenity-release">iPhone 专属 · 无需账号 · 数据留在本机<br>可用地区与上架状态以商店为准</p>
       </div>
       <figure class="serenity-art">
-        <div class="serenity-scene serenity-scene-doodle" role="img" aria-label="潦草涂鸦主题中，锁妖笼与马头泥身妖兽的概念场景">
-          <div class="serenity-scene-label">封印 YNM <span>潦草涂鸦 · 默认主题</span></div>
+        <div class="serenity-scene serenity-scene-monochrome" role="img" aria-label="黑白手绘主题中，锁妖笼与马头泥身妖兽的概念场景">
+          <div class="serenity-scene-label">封印 YNM <span>黑白手绘 · 默认主题</span></div>
           <div class="serenity-cage"><span class="serenity-cage-sign">锁 妖 笼</span><div class="serenity-cage-symbols" aria-hidden="true"><i>✦</i><i>◈</i><i>✿</i><i>◆</i></div></div>
-          <img class="serenity-beast" src="${new URL("./serenity-doodle.png", import.meta.url).href}" alt="" width="1280" height="1280">
+          <img class="serenity-beast" src="${new URL("./serenity-monochrome.png", import.meta.url).href}" alt="" width="1280" height="1280">
           <p class="serenity-scene-caption">收服一点纷扰，找回一片宁静。</p>
         </div>
         <figcaption><span>三种主题 · 同样从容</span><span>场景示意 · 非实际界面</span></figcaption>
