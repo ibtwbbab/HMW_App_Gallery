@@ -1,0 +1,30 @@
+/* 三主题展示模块与默认涂鸦场景；样式作用域仅限摇泥马。 */
+.serenity-skins { padding-top: 64px; }
+.serenity-skins-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.serenity-skin-card { border: 2px solid #62634d; background: #fffdf3; box-shadow: 4px 4px 0 #d9d1b1; min-width: 0; }
+.serenity-skin-art { height: 285px; position: relative; overflow: hidden; display: flex; align-items: end; justify-content: center; }
+.serenity-skin-art > span { position: absolute; top: 15px; left: 15px; z-index: 1; padding: 4px 9px; background: #fffdf3; border: 1px solid #535340; color: #30352b; font-size: 11px; }
+.serenity-skin-art img { width: 235px; height: 235px; object-fit: contain; }
+.serenity-skin-doodle { background: repeating-linear-gradient(#fbf6e9 0 27px, #d8dccf 28px 29px); }
+.serenity-skin-pixel { background: #526745 url('./serenity-forest.png') center 42% / cover; }
+.serenity-skin-pixel img { image-rendering: pixelated; }
+.serenity-skin-monochrome { background: #fff; }
+.serenity-skin-copy { border-top: 1px solid #cbc4ac; padding: 22px; }
+.serenity-skin-copy h3 { margin: 0 0 10px; font-size: 21px; }
+.serenity-skin-copy p { margin: 0; font-size: 13px; color: var(--muted); }
+.serenity-skins-note { margin: 20px 0 0; color: var(--muted); font-size: 11px; }
+.serenity-page .serenity-scene-doodle { background: repeating-linear-gradient(#fcf7ea 0 28px, #d5d9cc 29px 30px); }
+.serenity-page .serenity-scene-doodle::before { background: none; }
+.serenity-scene-doodle .serenity-scene-label { color: #322e27; text-shadow: none; }
+.serenity-scene-doodle .serenity-cage { border: 4px solid #39352b; border-radius: 7px 3px 9px 4px; background: #fff9e5d9; box-shadow: 3px 3px 0 #6c60453b; }
+.serenity-scene-doodle .serenity-cage-sign { background: #f8efd9; color: #3c332b; border: 2px solid #3c332b; border-radius: 3px 7px 2px 5px; }
+.serenity-scene-doodle .serenity-cage-symbols i { color: #fff9e5; background: #985442; border: 2px solid #3c332b; border-radius: 4px 7px 3px 6px; }
+.serenity-scene-doodle .serenity-beast { image-rendering: auto; }
+.serenity-scene-doodle .serenity-scene-caption { background: #fcf2d9; border: 2px solid #4d4236; border-radius: 2px 6px 4px 2px; }
+@media (max-width: 850px) {
+  .serenity-skins-grid { gap: 14px; }.serenity-skin-art { height: 225px; }.serenity-skin-art img { width: 180px; height: 180px; }.serenity-skin-copy { padding: 18px; }
+}
+@media (max-width: 580px) {
+  .serenity-skins { padding-top: 44px; }.serenity-skins-grid { grid-template-columns: 1fr; gap: 22px; }
+  .serenity-skin-art { height: 265px; }.serenity-skin-art img { width: 230px; height: 230px; }
+}

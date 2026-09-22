@@ -22,7 +22,7 @@ export function prepareSerenityPage(active, description) {
   document.querySelector('meta[name="theme-color"]').content = "#f5e8b8";
   const icon = document.createElement("link");
   icon.rel = "icon";
-  icon.href = new URL("./serenity-icon.png", import.meta.url).href;
+  icon.href = new URL("./serenity-icon.png?v=20260922", import.meta.url).href;
   document.head.append(icon);
   document.querySelector(".site-nav").innerHTML = links.map(([key, label, href]) => `<a href="${href}" ${active === key ? 'class="is-active" aria-current="page"' : ""}>${label}</a>`).join("");
   document.querySelector(".footer-links").innerHTML = '<a href="../#apps">全部 App</a>' + links.map(([, label, href]) => `<a href="${href}">${label}</a>`).join("");

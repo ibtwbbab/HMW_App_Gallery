@@ -1,4 +1,5 @@
-/* 摇泥马专属：复用客户端森林、玄铁、苔绿与羊皮纸；无外部字体。 */
+@import url("./serenity-skins.css");
+/* 摇泥马专属：纸面阅读与三套皮肤展示；无外部字体。 */
 .serenity-page {
   --paper: #f5edcf; --ink: #293329; --muted: #5e634c; --line: #cfc59e;
   --orange: #6a743b; --green: #354a32; --white: #fff8df;
