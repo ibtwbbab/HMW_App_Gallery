@@ -21,7 +21,7 @@ python3 -m http.server 8089
 
 应用目录在 `assets/catalog.js`；新应用采用独立数据文件，并在目录中注册。政策需要显式配置 `privacy.sections`、摘要与更新日期，不继承其他 App 的政策。
 
-专注之旅内容在 `assets/concentration-data.js`，政策在 `assets/concentration-privacy.js`，独立布局在 `assets/concentration-pages.js` 与 `assets/concentration.css`。公共页面使用 `assets/public.css`。开发者内容在 `support/index.html`，本地头像与四个图标在 `assets/developer/`，均复用 App 内资源。
+专注之旅内容在 `assets/concentration-data.js`，政策在 `assets/concentration-privacy.js`，独立布局在 `assets/concentration-pages.js` 与 `assets/concentration.css`。公共页面使用 `assets/public.css` 和共享 `assets/favicon.svg`。开发者内容在 `support/index.html`，本地头像与四个图标在 `assets/developer/`，均复用 App 内资源。
 
 继续使用原生链接、details/summary、CSS 与系统字体，不引入框架、外部字体、统计、Cookie 或浏览器持久存储。社交点击仅记录公开平台名称到本地控制台，不上传日志。
 
@@ -62,7 +62,21 @@ GitHub Pages 从默认分支根目录部署，保留 `.nojekyll`，无需构建�
 - 本次仅更新本地展示站及对应文档，未修改客户端及其未提交变更，未提交、推送或部署。其它应用和公共开发者页保持原设计。
 - 验证：Chrome 在 320、390、768、1440px 下回归本站 12 条页面路由，共 48 组；检查新图标、三主题、14 组 FAQ 的键盘展开、11 个政策目录、无效政策回退及禁用 JavaScript 提示。无横向溢出、图片/HTTP 错误、脚本异常或第三方请求，已人工复核手机与桌面截图。
 
+### 安心守护专属页面
+
+- `/app/?id=app-locker`：APP介绍，覆盖应用分组、手动/定时/使用时长锁定、家庭授权、应用密码、设备限制、7 天独立试用与会员边界。
+- `/privacy/?app=app-locker`：独立隐私政策，说明本机管理配置、钥匙串密码摘要和试用记录、Apple 屏幕使用时间与 StoreKit 系统处理、诊断、网站访问、主动支持信息及删除方式。
+- `/support/?app=app-locker`：13 组原生折叠 FAQ，包含儿童设备前置条件、非远程控制、三种锁定原因、系统调度延迟、授权和会员失效、设备限制范围及换机边界。
+- 内容依据 2026-09-24 当前工作区 iOS 1.0.0 / iOS 17.4+ 实现；商店入口使用客户端固定 App ID 6815533611，但不据此宣称已上架、售价或可用地区。
+- 视觉沿用客户端米白纸面、草木绿、法式蓝、陶土色与青绿色图标；功能区使用已标注的分组和自动化示意，不冒充实际截图。正式图标复用当前 Asset Catalog 的 AppIcon。
+- 独立文件：`growth-guard-data.js`、`growth-guard-privacy.js`、`growth-guard-pages.js`、`growth-guard.css` 与 `growth-guard-icon.png`。继续复用目录、政策正文、技术支持 FAQ 和公共开发者入口，不增加依赖、服务、Cookie 或浏览器持久化。
+- 政策以 hmw 为提供方，不继承其它 App 的主体、邮箱、支持期限或回复承诺。页面说明当前没有开发者账号、云端配置或远程管理，并区分设备本地数据、Apple 系统服务、静态网站访问和主动联系信息。
+- 本次仅更新本地展示站及文档，未修改客户端、提交、推送或部署；正式发布前仍需运营方审核隐私主体披露、支持信息保留规则及商店公开状态。
+- 验证：Chrome 以 320、390、768、1440px 检查首页、APP介绍、技术支持和隐私政策共 16 组页面；无横向溢出、坏图、脚本异常、HTTP 错误或第三方资源请求。另验证 4 张首页卡片、三页导航、13 组 FAQ、13 个政策目录和 FAQ 键盘展开，并人工复核桌面与手机截图。
+
 ## 修改历史
+
+- 2026-09-24 20:23 CST：新增安心守护 APP介绍、独立隐私政策、技术支持和首页目录入口；依据当前客户端与文档整理分组、三类锁定、家庭授权、应用密码、设备限制、试用和会员边界。复用正式图标并以客户端米白、草木绿和辅助色建立独立响应式页面，增加 13 组 FAQ 与 13 章政策目录；为全部页面补充共享 h 站点图标，保持其它应用内容和公共开发者页不变。
 
 - 2026-09-22 17:24 CST：将首页卡片、APP 介绍、隐私政策、技术支持及页面页脚中的用户可见应用名由“摇泥马”统一改为“YNM”；保留 `yaonima` URL 标识和内部文件命名，避免现有链接失效。同步当前模块文档，历史记录保留当时名称。
 

@@ -6,6 +6,11 @@ import { alarmPolicies } from "./jugaogao-privacy.js";
 import { renderSerenityApp } from "./serenity-app.js";
 import { enhanceSerenitySupport } from "./serenity-support.js";
 import { enhanceSerenityPrivacy } from "./serenity-policy-page.js";
+import {
+  renderGrowthGuardApp,
+  enhanceGrowthGuardSupport,
+  enhanceGrowthGuardPrivacy,
+} from "./growth-guard-pages.js";
 
 const escapeHtml = (value = "") =>
   String(value).replace(/[&<>'"]/g, (character) => ({
@@ -67,6 +72,7 @@ function renderApp() {
   }
 
   document.title = `${app.name} · ${siteConfig.brand}`;
+  if (app.id === "app-locker") { renderGrowthGuardApp(root, app); return; }
   if (app.id === "yaonima") { renderSerenityApp(root, app); return; }
   if (app.id === "jugaogao-alarm") { renderAlarmApp(root, app); return; }
   if (app.id === "concentration-journey") {
@@ -144,6 +150,7 @@ function renderPrivacy() {
   if (app?.id === "concentration-journey") enhanceJourneyPrivacy(app);
   if (app?.id === "jugaogao-alarm") enhanceAlarmPrivacy(app);
   if (app?.id === "yaonima") enhanceSerenityPrivacy(app);
+  if (app?.id === "app-locker") enhanceGrowthGuardPrivacy(app);
 }
 
 function renderDeveloper() {
@@ -152,6 +159,7 @@ function renderDeveloper() {
     renderAppSupport(app);
     if (app.id === "jugaogao-alarm") enhanceAlarmSupport(app);
     if (app.id === "yaonima") enhanceSerenitySupport(app);
+    if (app.id === "app-locker") enhanceGrowthGuardSupport(app);
     return;
   }
   console.info("[hmw gallery] Developer social page rendered");
