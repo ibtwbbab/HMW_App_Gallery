@@ -10,7 +10,7 @@ export const growthGuard = {
   version: "iOS 1.0.0",
   platform: "iPhone · iOS 17.4+",
   tagline: "把边界说清楚，让陪伴更安心。",
-  description: "在孩子的 iPhone 上整理应用与类别，按需手动锁定，并用定时或每日使用时长规则建立清晰边界。所有管理都在当前设备完成，不提供跨设备远程控制。",
+  description: "在孩子的 iPhone 上整理应用与类别，按需手动锁定，并用定时或每日使用时长规则完成自动锁定。",
   appStoreUrl: "https://apps.apple.com/app/id6815533611",
   privacy: growthGuardPrivacy,
   features: [

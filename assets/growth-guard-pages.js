@@ -141,7 +141,7 @@ export function enhanceGrowthGuardSupport(app) {
   if (hero) {
     hero.insertAdjacentHTML(
       "beforeend",
-      '<aside class="guard-support-note"><strong>开始排查前</strong><p>请确认当前是家人共享中的儿童 iPhone，并检查 iOS 版本、屏幕使用时间权限、试用或会员状态。系统执行可能存在短暂延迟。</p></aside>'
+      '<aside class="guard-support-note"><strong>开始排查前</strong><p>请确认运行该应用的设备已登入家人共享中的儿童账户，并检查 iOS 版本、屏幕使用时间权限、试用或会员状态。系统执行可能存在短暂延迟。</p></aside>'
     );
   }
   document.querySelectorAll(".app-support-faq details").forEach((details, index) => {
